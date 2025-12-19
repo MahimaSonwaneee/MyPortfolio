@@ -30,10 +30,15 @@ body {
   z-index: 1000;
 }
 
-.nav-logo {
+.nav-logo a {
   color: #fff;
   font-size: 22px;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-logo a:hover {
+  color: #7bb8e7;
 }
 
 .nav-links {
@@ -169,7 +174,6 @@ footer {
   margin-bottom: 20px;
 }
 
-/* CARD STYLING */
 .skills-category,
 .project-card {
   background: #fff;
@@ -180,10 +184,9 @@ footer {
   text-align: left;
 }
 
-/* LIST ITEM SPACING INSIDE CARDS */
 .experience-card ul,
 .project-card ul {
-  padding-left: 20px; /* space for bullets */
+  padding-left: 20px;
   margin-top: 10px;
 }
 
@@ -191,6 +194,43 @@ footer {
 .project-card li {
   margin-bottom: 8px;
   font-size: 14px;
+}
+
+/* UP ARROW */
+#up-arrow {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #7bb8e7;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 10000;
+}
+
+#up-arrow:hover {
+  background: #5a96c7;
+}
+
+/* THANK YOU MESSAGE */
+#thank-you {
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 30px;
+}
+
+.thank-msg {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* RESPONSIVE */
@@ -219,7 +259,6 @@ footer {
 
   .content-text {
     font-size: 14px;
-    text-align: center;
   }
 
   .skills-container,
@@ -230,5 +269,13 @@ footer {
 
   .experience-card {
     padding: 18px;
+  }
+
+  #up-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    bottom: 12px;
+    right: 12px;
   }
 }
