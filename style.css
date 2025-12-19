@@ -15,14 +15,13 @@ body {
   background: #f7f8fa;
   color: #333;
   line-height: 1.6;
-  overflow-x: hidden; /* FIX horizontal scroll */
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
-  width: 100%;
   background: #222;
   display: flex;
   justify-content: space-between;
@@ -32,28 +31,28 @@ body {
 }
 
 .nav-logo {
+  color: #fff;
   font-size: 22px;
   font-weight: 700;
-  color: #ffffff;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 20px;
+  list-style: none;
 }
 
 .nav-links a {
+  color: #fff;
   text-decoration: none;
-  color: #ffffff;
   font-size: 15px;
 }
 
 .nav-links a:hover {
-  color: #7BB8E7;
+  color: #7bb8e7;
 }
 
-/* HAMBURGER MENU */
+/* HAMBURGER */
 #menu-toggle {
   display: none;
 }
@@ -69,7 +68,6 @@ body {
   height: 3px;
   width: 25px;
   margin: 4px 0;
-  border-radius: 2px;
 }
 
 /* SECTIONS */
@@ -79,47 +77,67 @@ section {
   padding: 90px 20px 60px;
 }
 
-/* HEADINGS */
-h1 {
-  font-size: 34px;
-  margin-bottom: 10px;
-}
-
 h2 {
-  font-size: 28px;
-  margin-bottom: 25px;
   text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-/* CENTER */
 .center {
   text-align: center;
 }
 
-/* CONTENT TEXT */
 .content-text {
   max-width: 720px;
-  margin: 18px auto;
-  text-align: center;
+  margin: 16px auto 30px;
   font-size: 15px;
+  text-align: center;
 }
 
 /* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 15px;
   padding: 10px 24px;
-  background: #7BB8E7;
+  background: #7bb8e7;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
-  font-size: 14px;
+  border: none;
   cursor: pointer;
+}
+
+/* FORM */
+form {
+  max-width: 600px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #7bb8e7;
 }
 
 /* FOOTER */
@@ -131,7 +149,51 @@ footer {
   font-size: 14px;
 }
 
-/* RESPONSIVE FIX */
+/* CARDS GRID */
+.skills-container,
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+.experience-card {
+  display: block;
+  background: #fff;
+  padding: 22px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* CARD STYLING */
+.skills-category,
+.project-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 8px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+/* LIST ITEM SPACING INSIDE CARDS */
+.experience-card ul,
+.project-card ul {
+  padding-left: 20px; /* space for bullets */
+  margin-top: 10px;
+}
+
+.experience-card li,
+.project-card li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .menu-icon {
     display: flex;
@@ -147,25 +209,26 @@ footer {
     display: none;
   }
 
-  .nav-links li {
-    border-top: 1px solid #333;
-    text-align: center;
-  }
-
-  .nav-links li a {
-    display: block;
-    padding: 14px 0;
-  }
-
   #menu-toggle:checked ~ .nav-links {
     display: flex;
   }
 
-  h1 {
-    font-size: 28px;
+  section {
+    padding: 70px 16px 50px;
   }
 
-  h2 {
-    font-size: 24px;
+  .content-text {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .skills-container,
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .experience-card {
+    padding: 18px;
   }
 }

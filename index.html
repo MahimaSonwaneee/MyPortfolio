@@ -179,11 +179,6 @@
     <section id="contact">
       <h2>Contact</h2>
 
-      <p class="content-text">
-        Email: mahimasonwane24@gmail.com <br />
-        Phone: +91 9637992060
-      </p>
-
       <form action="https://formspree.io/f/mpqaaebk" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -206,5 +201,19 @@
     <footer>
       <p>© 2025 Mahima Sonwane. All Rights Reserved.</p>
     </footer>
+
+    <!-- JS to auto-close mobile menu -->
+    <script>
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const menuToggle = document.getElementById("menu-toggle");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (menuToggle.checked) {
+            menuToggle.checked = false;
+          }
+        });
+      });
+    </script>
   </body>
 </html>
